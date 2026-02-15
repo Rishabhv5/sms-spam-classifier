@@ -20,9 +20,15 @@ except LookupError:
     nltk.download("punkt", download_dir=nltk_data_path)
 
 try:
+    nltk.data.find("tokenizers/punkt_tab")
+except LookupError:
+    nltk.download("punkt_tab", download_dir=nltk_data_path)
+
+try:
     nltk.data.find("corpora/stopwords")
 except LookupError:
     nltk.download("stopwords", download_dir=nltk_data_path)
+
 ps = PorterStemmer()
 
 def transform_text(text):
